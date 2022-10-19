@@ -1,0 +1,44 @@
+{% block content %} {% include "br/header.html" %}
+{% load bootstrap %}
+<!-- Page Header-->
+<header class="masthead" style="">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading f-color">
+                    <h1 class="f-color">Editar ou Deletar vehicle</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Post Content-->
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7 f-color">
+                <form method="post" enctype='multipart/form-data'>
+                    {% csrf_token %}
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        {{ form.errors }}
+                    </div>
+                    {% endif %}
+                    {{ form|bootstrap }}
+                    <input class="btn btn-success" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        {% if vehicle %}
+        <a class="btn btn-danger float-right" href="{% url 'delete_vehicle' vehicle.id %}">DELETE
+            VEHICLE &rarr;</a>
+        {% endif %}
+    </div>
+
+</article>
+<hr>
+{% load static %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% endblock %}
+{% include "br/footer.html" %}

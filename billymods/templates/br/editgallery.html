@@ -1,0 +1,45 @@
+{% block content %} {% include "br/header.html" %}
+{% load bootstrap %}
+<!-- Page Header-->
+<header class="masthead" style="">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading f-color">
+                    <h1 class="f-color">Edit or Delete Gallery</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Post Content-->
+<div class="container">
+    <div class="row">
+        {% for image in all_gallery %}
+
+        <div class="col">
+            <h4 class="fs-sm text-uppercase pt-1 mb-2 text-info">{{image.images}} - <a
+                    href="{% url 'delete_gallery' image.id image.vehicle_id.id %}"><i
+                        class="fa-solid fa-x fa-cog"></i></a></h4>
+        </div>
+        {% endfor %}
+        </ul>
+    </div>
+    <hr>
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7 f-color">
+                    <form method="post" enctype='multipart/form-data'>
+                        {% csrf_token %}
+                        {{ form|bootstrap }}
+                        <input class="btn btn-success" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </article>
+    <hr>
+    {% endblock %}
+    {% include "br/footer.html" %}

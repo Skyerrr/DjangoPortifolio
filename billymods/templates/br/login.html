@@ -1,0 +1,49 @@
+{% block content %} {% include "br/header.html" %}
+<!-- Page Header-->
+<header class="masthead" style="">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading f-color">
+                    <h1 class="f-color text-center">Login</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Post Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center text-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="login-box">
+                    {% if context %}
+                    {% for key, value in context.items %}
+                    <p class="text-center text-white">{{ value }}</p>
+                    {% endfor %}
+                    {% endif %}
+                    <form action="{% url 'br_billylogin' %}" method="post">
+                        {% csrf_token %}
+                        <div class="user-box">
+                            <input type="text" name="username" required="required">
+                            <label>Username</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="password" required="required">
+                            <label>Password</label>
+                        </div>
+                        <button type="submit" href="#">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+{% include "br/footer.html" %}
