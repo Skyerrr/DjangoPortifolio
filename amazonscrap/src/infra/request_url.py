@@ -43,4 +43,4 @@ class UrlToScrap(GetUrlInterface):
 
             return tuple_response(status_code=status_code, response=response.text)
         else:
-            Return f"Error {status_code}"
+            return f"Error {status_code}"
