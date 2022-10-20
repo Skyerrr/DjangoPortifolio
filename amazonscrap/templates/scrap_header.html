@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>BillyMods | Welcome!</title>
+	{% load static %}
+	<!-- SEO Meta Tags-->
+	<meta name="author" content="BillyMods">
+	<meta property="og:site_name" content="BillyMods">
+	<meta name="revisit-after" content="10 days">
+	<meta name="description"
+		content="The best and biggest vehicle quality for your FiveM Server! Check our products today!">
+	<meta property="og:image" content="">
+
+	<!-- Viewport-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicon and Touch Icons-->
+	<link rel="shortcut icon" href="{% static 'billymods/core/billy-logo-small.png' %}">
+	<meta name="msapplication-TileColor" content="#766df4">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Vendor Styles-->
+	<link rel="stylesheet" media="screen" href="{% static 'amazonscrap/css/scrap_styles.css' %}">
+	<link rel="stylesheet" media="screen" href="{% static 'billymods/css/tiny-slider.css' %}">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet" />
+
+
+	<!-- Main Theme Styles + Bootstrap-->
+	<style>
+		.gallery-item.video-item::after {
+			content: "▶";
+		}
+
+		.tns-thumbnails [data-nav].video-indicator::before {
+			content: "▶";
+			line-height: 4rem;
+		}
+	</style>
+
+
+	<!-- FontAwsome -->
+	<script src="https://kit.fontawesome.com/129c1ce1a7.js" crossorigin="anonymous"></script>
+
+	<!-- Page loading styles-->
+	<style>
+		.page-loading {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			-webkit-transition: all 0.4s 0.2s ease-in-out;
+			transition: all 0.4s 0.2s ease-in-out;
+			background-color: #fff;
+			opacity: 0;
+			visibility: hidden;
+			z-index: 9999;
+		}
+
+		.page-loading.active {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.page-loading-inner {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			-webkit-transition: opacity 0.2s ease-in-out;
+			transition: opacity 0.2s ease-in-out;
+			opacity: 0;
+		}
+
+		.page-loading.active>.page-loading-inner {
+			opacity: 1;
+		}
+
+		.page-loading-inner>span {
+			display: block;
+			font-size: 1rem;
+			font-weight: normal;
+			color: #787a80;
+		}
+
+		.page-spinner {
+			display: inline-block;
+			width: 2.75rem;
+			height: 2.75rem;
+			margin-bottom: 0.75rem;
+			vertical-align: text-bottom;
+			background-color: #cfcfd1;
+			border-radius: 50%;
+			opacity: 0;
+			-webkit-animation: spinner 0.75s linear infinite;
+			animation: spinner 0.75s linear infinite;
+		}
+
+		@-webkit-keyframes spinner {
+			0% {
+				-webkit-transform: scale(0);
+				transform: scale(0);
+			}
+
+			50% {
+				opacity: 1;
+				-webkit-transform: none;
+				transform: none;
+			}
+		}
+
+		@keyframes spinner {
+			0% {
+				-webkit-transform: scale(0);
+				transform: scale(0);
+			}
+
+			50% {
+				opacity: 1;
+				-webkit-transform: none;
+				transform: none;
+			}
+		}
+	</style>
+
+	<style>
+		.theVideo {
+			height: 150%;
+			width: 100%;
+			margin-top: -5em;
+		}
+	</style>
+
+	<!-- Page loading scripts-->
+	<script>
+		(function () {
+			window.onload = function () {
+				var preloader = document.querySelector('.page-loading');
+				preloader.classList.remove('active');
+				setTimeout(function () {
+					preloader.remove();
+				}, 2000);
+			};
+		})();
+	</script>
+</head>
+
+
+<!-- Body-->
+
+<body>
+
+	<!-- Page loading spinner-->
+	<div class="page-loading active bg-dark">
+		<div class="page-loading-inner">
+			<div class="page-spinner text-white"></div>
+			<span class="text-white">Loading...</span>
+		</div>
+	</div>
+
+	<!-- Page wrapper for sticky footer -->
+	<!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+	<main class="page-wrapper bg-dark">
+
+
+		<!-- Header (Topbar + Navbar) -->
+		<header class="header">
+
+			<!-- Navbar -->
+			<!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+
+		</header>

@@ -12,6 +12,19 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import sys
+
+sys.path.append("amazon")
+sys.path.append("amazon/src")
+sys.path.append("amazon/src/data")
+sys.path.append("amazon/src/data/interfaces")
+sys.path.append("amazon/src/infra")
+sys.path.append("amazon/src/errors")
+sys.path.append("src")
+sys.path.append("src/data")
+sys.path.append("src/data/interfaces")
+sys.path.append("src/infra")
+sys.path.append("src/errors")
 
 CACHE_TTL = 60 * 1500
 
@@ -55,6 +68,7 @@ INSTALLED_APPS = [
     "homepage",
     "skymacro",
     "billymods",
+    "amazonscrap",
 ]
 
 MIDDLEWARE = [
@@ -76,6 +90,7 @@ TEMPLATES = [
             f"{BASE_DIR}/billymods/templates/br",
             f"{BASE_DIR}/billymods/templates/en",
             f"{BASE_DIR}/homepage/templates/",
+            f"{BASE_DIR}/amazonscrap/templates/",
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -143,6 +158,7 @@ STATICFILES_DIRS = [
     ("homepage", os.path.join(BASE_DIR, "homepage/static")),
     ("skymacro", os.path.join(BASE_DIR, "skymacro/static")),
     ("billymods", os.path.join(BASE_DIR, "billymods/static")),
+    ("amazonscrap", os.path.join(BASE_DIR, "amazonscrap/static")),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"

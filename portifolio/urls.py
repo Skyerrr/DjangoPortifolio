@@ -22,4 +22,5 @@ urlpatterns = [
     path("", include("skymacro.urls")),
     path("", include("billymods.pt-br.urls")),
     path("", include("billymods.en-us.urls")),
+    path("", include("amazonscrap.urls")),
 ]

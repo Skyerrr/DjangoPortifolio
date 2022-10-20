@@ -13,6 +13,5 @@
     ],
     "python.envFile": "${workspaceFolder}/.env",
     "terminal.integrated.env.windows": {
-        "PYTHONPATH": "${workspaceFolder}/library;${workspaceFolder}/portifolio"
+        "PYTHONPATH": "${workspaceFolder}/amazonscrap;${workspaceFolder}/amazonscrap/src;${workspaceFolder}/amazonscrap/src/data;${workspaceFolder}/amazonscrap/src/data/interfaces;${workspaceFolder}/amazonscrap/src/errors;${workspaceFolder}/amazonscrap/src/infra"
     }
-}

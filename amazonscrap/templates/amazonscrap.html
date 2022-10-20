@@ -1,0 +1,53 @@
+{% block content %} {% include "scrap_header.html" %}
+{% load static %}
+<header class="masthead" style="">
+	<div class="container position-relative px-4 px-lg-5">
+		<div class="row gx-4 gx-lg-5 justify-content-center">
+			<div class="col-md-10 col-lg-8 col-xl-7">
+				<div class="post-heading f-color">
+					<h1 class="f-color text-center">Scrap Amazon first page name and price to a CSV file and
+						a distribution plot.</h1><br>
+					<h3 class="f-color text-center">Scrap with BeautifulSoup | Plot with Seaborn </h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- Post Content-->
+<main class="mb-4">
+	<div class="container px-4 px-lg-5">
+		<div class="row gx-4 gx-lg-5 justify-content-center text-center">
+			<div class="col-md-10 col-lg-8 col-xl-7">
+				<div class="login-box">
+					{% if context %}
+					{% for key, value in context.items %}
+					<p class="text-center text-white">{{ value }}</p>
+					{% endfor %}
+					{% endif %}
+					<form action="{% url 'scrap_index' %}" method="post">
+						{% csrf_token %}
+						<div class="user-box">
+							<input type="text" name="scrapname" required="required">
+							<label>Product name</label>
+						</div>
+						<button type="submit" href="#">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							Scrap
+						</button>
+					</form>
+
+				</div>
+			</div>
+			<br><br><br><br><br><br><br><br><br><br><br><br>
+			<div><a class="btn btn-primary" href="/amazonscrap/download-csv">
+					Download CSV File
+				</a></div>
+			<div><br><img src="{% static 'amazonscrap/displot2.png' %}" alt="Displot" width="500"></div>
+		</div>
+	</div>
+</main>
+{% endblock %}
+{% include "scrap_footer.html" %}

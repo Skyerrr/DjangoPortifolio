@@ -14,7 +14,7 @@ urlpatterns = [
         name="en_subcategory",
     ),
     path("billymods/en-us/login/", views.billylogin, name="en_billylogin"),
-    path("billymods/logout", views.billylogout, name="billylogout"),
+    path("billymods/logout", views.billylogout, name="en_billylogout"),
     path(
         "billymods/delete_vehicle/<int:id>",
         login_required(views.delete_vehicle),
