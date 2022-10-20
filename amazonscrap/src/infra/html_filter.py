@@ -68,7 +68,7 @@ class IphoneHtmlFilter(UrlToScrap):
             results.append({"name": self.names[index], "price": self.price_list[index]})
         path = "amazonscrap/"
         to_csv = pd.DataFrame(results)
-        to_csv.to_csv(f"{settings.BASE_DIR}/amazonscrap/{csv_file_name}", index=False)
+        to_csv.to_csv(f"{settings.BASE_DIR}/media/{csv_file_name}", index=False)
 
     def run_from_url(self, url: str, csv_file_name="results.csv") -> csv:
         """

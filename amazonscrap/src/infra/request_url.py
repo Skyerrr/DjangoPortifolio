@@ -40,7 +40,7 @@ class UrlToScrap(GetUrlInterface):
         if (status_code >= 200) and (status_code <= 299):
 
             with open(
-                f"{settings.BASE_DIR}/amazonscrap/response2.html", "w", encoding="utf-8"
+                f"{settings.BASE_DIR}/media/response2.html", "w", encoding="utf-8"
             ) as html_file:
                 html_file.write(response.text)
 
