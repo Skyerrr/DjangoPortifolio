@@ -33,7 +33,7 @@ def download_amazon_csv(request: Type[Request]) -> Type[FileResponse]:
     View function to download skymacro file
     """
     skymacro = open(
-        f"{settings.BASE_DIR}/csvfile.csv",
+        f"{settings.BASE_DIR}/amazonscrap/csvfile.csv",
         "rb",
     )
     response = FileResponse(skymacro)

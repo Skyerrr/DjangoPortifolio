@@ -38,7 +38,7 @@ class UrlToScrap(GetUrlInterface):
 
         if (status_code >= 200) and (status_code <= 299):
 
-            with open("response2.html", "w", encoding="utf-8") as html_file:
+            with open("amazonscrap/response2.html", "w", encoding="utf-8") as html_file:
                 html_file.write(response.text)
 
             return tuple_response(status_code=status_code, response=response.text)
