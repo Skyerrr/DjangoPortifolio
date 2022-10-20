@@ -30,12 +30,12 @@ def scrap_view(request: Type[Request]) -> Type[HttpResponse]:
 
 def download_amazon_csv(request: Type[Request]) -> Type[FileResponse]:
     """
-    View function to download skymacro file
+    View function to download csv file
     """
-    skymacro = open(
+    csv = open(
         f"{settings.BASE_DIR}/media/csvfile.csv",
         "rb",
     )
-    response = FileResponse(skymacro)
+    response = FileResponse(csv)
 
     return response
