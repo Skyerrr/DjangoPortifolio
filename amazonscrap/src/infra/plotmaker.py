@@ -23,7 +23,7 @@ def plotmaker():
             sns.displot(csv["price"], kde=False, bins=30)
             plt.savefig(os.path.join(path, "static/displot1.png"))
             plt.show()
-        except EmptyDataError as empty22:
+        except BaseException as empty22:
             pass
         try:
             if empty22:
