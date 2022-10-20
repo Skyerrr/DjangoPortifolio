@@ -10,6 +10,7 @@ sys.path.append("amazonscrap/src/infra")
 sys.path.append("amazonscrap/src/errors")
 from amazonscrap.src.data.interfaces.get_url_interface import GetUrlInterface
 from amazonscrap.src.errors.http_request_error import HttpRequestError
+from django.conf import settings
 
 
 class UrlToScrap(GetUrlInterface):
@@ -38,7 +39,9 @@ class UrlToScrap(GetUrlInterface):
 
         if (status_code >= 200) and (status_code <= 299):
 
-            with open("amazonscrap/response2.html", "w", encoding="utf-8") as html_file:
+            with open(
+                f"{settings.BASE_DIR}/amazonscrap/response2.html", "w", encoding="utf-8"
+            ) as html_file:
                 html_file.write(response.text)
 
             return tuple_response(status_code=status_code, response=response.text)
